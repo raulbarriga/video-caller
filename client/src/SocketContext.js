@@ -4,7 +4,10 @@ import Peer from "simple-peer";
 
 const SocketContext = createContext();
 
-const socket = io("http://localhost:5000/");
+// production server deployment:
+const socket = io(process.env.REACT_APP_SERVER_PROD_URL);
+// dev mode
+// const socket = io("http://localhost:5000/");
 
 const ContextProvider = ({ children }) => {
   const [stream, setStream] = useState(null);
