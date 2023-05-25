@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node server.js --watch"
+    "dev": "node server.js --watch",
+    "prod": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
