@@ -16,7 +16,11 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
-app.get("/", (req, res) => res.send("Server is running."));
+app.get("/", (req, res) => {
+  res.header("Access-Control-Allow-Credentials", true);
+  res.send("Server is running.");
+});
+
 io.on("connection", (socket) => {
   socket.emit("me", socket.id); // this is for the calling user
 
